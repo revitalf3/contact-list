@@ -1,16 +1,25 @@
 <div class="wrapper">
-  <div *ngFor="let contact of contactsList" class="box">
-    <mat-card >
-      <div class="box-image">
-        <img mat-card-image [src]="contact.profile_image">
-        <img mat-card-sm-image [src]="contact.icon">
-
-      </div>
+  <div *ngFor="let contact of contactsList; let i = index" class="box" (mouseenter)="onHover(i)"
+       (mouseleave)="onHover(-1)">
+    <mat-card>
       <mat-card-content>
-        <h3>{{contact.name}}</h3>
-        <p>{{contact.job}} | @{{contact.company_name}}</p>
+        <div class="box-image">
+          <img mat-card-image [src]="contact.profile_image">
+          <img mat-card-sm-image [src]="contact.icon" [ngClass]="{'mat-card-sm-image-hover': i === hoverIndex}" >
 
+        </div>
       </mat-card-content>
+      <mat-card-footer>
+        <div class="card-details" [ngClass]="{'card-details-hover': i === hoverIndex}">
+          <h4>{{contact.name}}</h4>
+          <p>{{contact.job}} | @{{contact.company_name}}</p>
+          <div class="card-more-details" *ngIf="i === hoverIndex">
+            <p>Phone Number: {{contact.phone}}</p>
+            <p>{{contact.email}}</p>
+          </div>
+        </div>
+      </mat-card-footer>
+
     </mat-card>
 
   </div>

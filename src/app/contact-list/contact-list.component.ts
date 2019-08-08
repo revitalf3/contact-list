@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { Contact } from '../contacts/contact';
+import {Contact} from '../contacts/contact';
 
 @Component({
   selector: 'app-contact-list',
@@ -8,12 +8,16 @@ import { Contact } from '../contacts/contact';
 })
 export class ContactListComponent implements OnInit {
   @Input() contactsList: Contact[];
-
-  constructor() { }
-
-  ngOnInit() {
+  public hoverIndex = -1;
 
 
+  constructor() {
+  }
+
+  ngOnInit() {}
+
+  onHover(i: number) {
+    this.hoverIndex = i;
   }
 
 }

@@ -2,8 +2,9 @@
   display: grid
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
   grid-gap: 20px
-  align-items: stretch
 
+h4, p
+  margin: 0
 
 .box
   border: 1px solid #ccc
@@ -27,8 +28,27 @@
   background: white
   border: 1px solid #ccc
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3)
+  z-index: 1
 
-
+.mat-card-sm-image-hover
+  bottom: calc(35%)
 
 .mat-card:not([class*=mat-elevation-z])
   box-shadow: none
+  height: 305px
+
+.card-details
+  h4,p
+    padding-left: 16px
+
+.card-details-hover
+  padding: 16px 0 0 0
+  height: 50%
+  background: white
+  position: absolute
+  width: 100%
+  bottom: 0
+
+.card-more-details
+  padding-top: 16px
+
