@@ -1,4 +1,16 @@
 <div class="contacts">
-  <app-serach-box (searchTextChanged)="onSearchText($event)"></app-serach-box>
-  <app-contact-list [contactsList]="contactsList" ></app-contact-list>
+  <div>
+    <app-serach-box (searchTextChanged)="onSearchText($event)"></app-serach-box>
+  </div>
+  <div>
+    <app-contact-list [contactsList]="contactsList" *ngIf="contactsList;else second"></app-contact-list>
+  </div>
+
+  <ng-template #second >
+    <div class="spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+
+
 </div>
