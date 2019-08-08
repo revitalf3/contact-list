@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div *ngFor="let contact of contactsList" class="box">
+    <mat-card >
+      <div class="box-image">
+        <img mat-card-image [src]="contact.profile_image">
+        <img mat-card-sm-image [src]="contact.icon">
+
+      </div>
+      <mat-card-content>
+        <h3>{{contact.name}}</h3>
+        <p>{{contact.job}} | @{{contact.company_name}}</p>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
