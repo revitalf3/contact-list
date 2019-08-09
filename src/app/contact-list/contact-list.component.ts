@@ -8,7 +8,6 @@ import {Contact} from '../contacts/contact';
 })
 export class ContactListComponent implements OnInit {
   @Input() contactsList: Contact[];
-  public hoverIndex = -1;
 
 
   constructor() {
@@ -16,8 +15,5 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit() {}
 
-  onHover(i: number) {
-    this.hoverIndex = i;
-  }
 
 }
