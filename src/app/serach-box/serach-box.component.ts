@@ -28,5 +28,4 @@ export class SerachBoxComponent implements OnInit {
   }
 
 
-
 }

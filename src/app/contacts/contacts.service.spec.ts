@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { ContactsService } from './contacts.service';
 import { of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import {getContactsMock} from './contacts.mock';
+import { getContactsMock } from './contacts.mock';
 
 describe('ContactsService', () => {
   let service: ContactsService;
