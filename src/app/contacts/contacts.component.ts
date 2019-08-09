@@ -23,7 +23,7 @@ export class ContactsComponent implements OnInit {
   }
 
   onSearchText(text): void {
-    this.contactsList = this.AllContactsList.filter(contact => contact.name.toLowerCase().includes(text));
+    this.contactsList = this.AllContactsList.filter(contact => contact.name.toLowerCase().includes(text.toLowerCase()));
   }
 
 }
