@@ -1,18 +1,22 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ContactsService } from './contacts.service';
-import {of} from 'rxjs';
+import { of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import {getContactsMock} from './contacts.mock';
 
 describe('ContactsService', () => {
   let service: ContactsService;
-  let contactsServiceStub: jasmine.SpyObj<ContactsService>;
+  let httpClientStub: jasmine.SpyObj<HttpClient>;
 
   beforeEach(() => {
-    contactsServiceStub = jasmine.createSpyObj('ContactsService', ['getAllContacts']);
-    contactsServiceStub.getAllContacts.and.returnValue(of(getFoldersMock()));
+    httpClientStub = jasmine.createSpyObj('HttpClient', ['get', 'post', 'put']);
+    httpClientStub.get.and.returnValue(of({ folders: getContactsMock() }));
+
 
     TestBed.configureTestingModule({
-      providers: [ContactsService]
+      providers: [ContactsService,
+        { provide: HttpClient, useValue: httpClientStub }]
     });
 
     service = TestBed.get(ContactsService);
@@ -20,7 +24,17 @@ describe('ContactsService', () => {
 
 
   it('should be created', () => {
-    const service: ContactsService = TestBed.get(ContactsService);
     expect(service).toBeTruthy();
   });
+
+  describe('getAllContacts', () => {
+    it('should call getAllContacts', () => {
+      service.getAllContacts();
+      expect(httpClientStub.get).toHaveBeenCalledWith(
+        'https://candidate-test.herokuapp.com/contacts'
+      );
+    });
+  });
 });
+
+
