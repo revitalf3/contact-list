@@ -2,11 +2,11 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactsComponent } from './contacts.component';
 
-import {ContactsService} from './contacts.service';
-import {of} from 'rxjs';
+import { ContactsService } from './contacts.service';
+import { of } from 'rxjs';
 
-import {getContactsMock} from './contacts.mock';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
+import { getContactsMock } from './contacts.mock';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ContactsComponent', () => {
   let component: ContactsComponent;

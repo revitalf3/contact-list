@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SerachBoxComponent } from './serach-box.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('SerachBoxComponent', () => {
   let component: SerachBoxComponent;
@@ -8,7 +9,8 @@ describe('SerachBoxComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SerachBoxComponent ]
+      declarations: [ SerachBoxComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
@@ -19,7 +21,7 @@ describe('SerachBoxComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 });

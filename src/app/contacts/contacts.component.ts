@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {first} from 'rxjs/operators';
-import {Contact} from './contact';
-import {ContactsService} from './contacts.service';
+import { first } from 'rxjs/operators';
+import { Contact } from './contact';
+import { ContactsService } from './contacts.service';
 
 @Component({
   selector: 'app-contacts',

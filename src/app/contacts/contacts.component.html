@@ -6,11 +6,9 @@
     <app-contact-list [contactsList]="contactsList" *ngIf="contactsList;else second"></app-contact-list>
   </div>
 
-  <ng-template #second >
+  <ng-template #second>
     <div class="spinner">
       <mat-spinner></mat-spinner>
     </div>
   </ng-template>
-
-
 </div>

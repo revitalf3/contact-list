@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactListComponent } from './contact-list.component';
-import {NO_ERRORS_SCHEMA} from '@angular/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ContactListComponent', () => {
   let component: ContactListComponent;
