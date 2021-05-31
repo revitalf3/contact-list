@@ -14,6 +14,6 @@ export class ContactsService {
 
 
   getAllContacts(): Observable<Contact[]> {
-    return this.httpClient.get<Contact[]>(API);
+    return this.httpClient.put<Contact[]>(API, []);
   }
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
-import { Contact } from './contact';
-import { ContactsService } from './contacts.service';
+import {Component, OnInit} from '@angular/core';
+import {first} from 'rxjs/operators';
+import {Contact} from './contact';
+import {ContactsService} from './contacts.service';
 
 @Component({
   selector: 'app-contacts',
@@ -12,7 +12,8 @@ export class ContactsComponent implements OnInit {
   public AllContactsList: Contact[];
   public contactsList: Contact[];
 
-  constructor(private contactsService: ContactsService) { }
+  constructor(private contactsService: ContactsService) {
+  }
 
   ngOnInit() {
     this.contactsService.getAllContacts()
@@ -25,5 +26,6 @@ export class ContactsComponent implements OnInit {
   onSearchText(text): void {
     this.contactsList = this.AllContactsList.filter(contact => contact.name.toLowerCase().includes(text.toLowerCase()));
   }
+
 
 }
